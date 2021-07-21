@@ -1,0 +1,23 @@
+﻿<Page x:Class="MusicalShopUI.RegisterPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MusicalShopUI"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800" Background="White"
+      Title="RegisterPage">
+
+    <StackPanel Orientation="Vertical">
+
+        <Label HorizontalAlignment="Center" FontSize="30" Margin="5">Register Menu</Label>
+        <Label FontSize="18" Margin="5">Enter Login</Label>
+        <TextBox Text="{Binding Login, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}" FontSize="18" Margin="5"></TextBox>
+        <Label FontSize="18" Margin="5">Enter Name</Label>
+        <TextBox Text="{Binding Name, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}" FontSize="18" Margin="5"></TextBox>
+        <Label FontSize="18" Margin="5">Enter Password</Label>
+        <TextBox  Text="{Binding Password, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}" FontSize="18" Margin="5"></TextBox>
+        <Button Command="{Binding RegisterCommand}" FontSize="18" Margin="5" Padding="5">Register</Button>
+        <Button Command="{Binding ToLoginPageCommand}" FontSize="18" Margin="5" Padding="5">Go to login page</Button>
+    </StackPanel>
+</Page>

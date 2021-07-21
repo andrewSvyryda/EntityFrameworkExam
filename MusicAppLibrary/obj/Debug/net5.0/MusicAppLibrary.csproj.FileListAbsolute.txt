@@ -1,0 +1,12 @@
+C:\Users\andri\source\repos\MusicShopApi\MusicAppLibrary\bin\Debug\net5.0\MusicAppLibrary.deps.json
+C:\Users\andri\source\repos\MusicShopApi\MusicAppLibrary\bin\Debug\net5.0\MusicAppLibrary.dll
+C:\Users\andri\source\repos\MusicShopApi\MusicAppLibrary\bin\Debug\net5.0\ref\MusicAppLibrary.dll
+C:\Users\andri\source\repos\MusicShopApi\MusicAppLibrary\bin\Debug\net5.0\MusicAppLibrary.pdb
+C:\Users\andri\source\repos\MusicShopApi\MusicAppLibrary\obj\Debug\net5.0\MusicAppLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\andri\source\repos\MusicShopApi\MusicAppLibrary\obj\Debug\net5.0\MusicAppLibrary.AssemblyInfoInputs.cache
+C:\Users\andri\source\repos\MusicShopApi\MusicAppLibrary\obj\Debug\net5.0\MusicAppLibrary.AssemblyInfo.cs
+C:\Users\andri\source\repos\MusicShopApi\MusicAppLibrary\obj\Debug\net5.0\MusicAppLibrary.csproj.CoreCompileInputs.cache
+C:\Users\andri\source\repos\MusicShopApi\MusicAppLibrary\obj\Debug\net5.0\MusicAppLibrary.dll
+C:\Users\andri\source\repos\MusicShopApi\MusicAppLibrary\obj\Debug\net5.0\ref\MusicAppLibrary.dll
+C:\Users\andri\source\repos\MusicShopApi\MusicAppLibrary\obj\Debug\net5.0\MusicAppLibrary.pdb
+C:\Users\andri\source\repos\MusicShopApi\MusicAppLibrary\obj\Debug\net5.0\MusicAppLibrary.csproj.AssemblyReference.cache

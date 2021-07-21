@@ -1,0 +1,119 @@
+﻿<Page x:Class="MusicalShopUI.OrderDiscsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MusicalShopUI" d:DataContext="{d:DesignInstance Type=local:OrderDiscsPageVeiwModel}"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800" Background="White"
+      Title="OrderDiscsPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.ColumnSpan="2"></StackPanel>
+        <DockPanel Grid.Row="1">
+            <ListBox DockPanel.Dock="Top" FontSize="18" Grid.ColumnSpan="2" Grid.RowSpan="2">Select Discs</ListBox>
+            <Grid DockPanel.Dock="Left">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <Button Command="{Binding GetAll}" Margin="3" Padding="3">Get all</Button>
+                <Button Command="{Binding GetBest}" Grid.Row="1" Margin="3" Padding="3">Get best</Button>
+                <StackPanel VerticalAlignment="Center" Grid.Row="1" Grid.Column="1">
+                    <Label>Enter count:</Label>
+                    <TextBox Text="{Binding Count1, UpdateSourceTrigger=PropertyChanged}" Margin="5, 0, 5, 0"></TextBox>
+                </StackPanel>
+                <Button Command="{Binding GetNew}" Grid.Row="2" Margin="3" Padding="3">Get new</Button>
+                <StackPanel VerticalAlignment="Center" Grid.Row="2" Grid.Column="1">
+                    <Label>Enter count:</Label>
+                    <TextBox Text="{Binding Count2, UpdateSourceTrigger=PropertyChanged}" Margin="5, 0, 5, 0"></TextBox>
+                </StackPanel>
+                <Button Command="{Binding GetByGenre}" Grid.Row="3" Margin="3" Padding="3">Get by genre</Button>
+                <StackPanel VerticalAlignment="Center" Grid.Row="3" Grid.Column="1">
+                    <Label>Select genre</Label>
+                    <ComboBox SelectedItem="{Binding SelectedGenre}" ItemsSource="{Binding GenresList}" Margin="5, 0, 5, 0">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <WrapPanel>
+                                    <TextBlock Text="{Binding Name}" FontWeight="Bold" />
+                                </WrapPanel>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                </StackPanel>
+                <Button Command="{Binding GetByGroup}" Grid.Row="4" Margin="3" Padding="3">Get by group</Button>
+                <StackPanel VerticalAlignment="Center" Grid.Row="4" Grid.Column="1">
+                    <Label>Select group</Label>
+                    <ComboBox SelectedItem="{Binding SelectedGroup}" ItemsSource="{Binding GroupsList}" Margin="5, 0, 5, 0">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <WrapPanel>
+                                    <TextBlock Text="{Binding Name}" FontWeight="Bold" />
+                                </WrapPanel>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                </StackPanel>
+                <Button Command="{Binding GetByName}" Grid.Row="5" Margin="3" Padding="3">Get by name</Button>
+                <StackPanel VerticalAlignment="Center" Grid.Row="5" Grid.Column="1">
+                    <Label>Enter name</Label>
+                    <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" Margin="5, 0, 5, 0"></TextBox>
+                </StackPanel>
+            </Grid>
+            <ListView ItemsSource="{Binding DiscsList}" local:ListViewExtensions.SelectedValues="{Binding SelectedDiscs}"  SelectionMode="Multiple"  Name="DiscsView" Grid.ColumnSpan="2" Grid.RowSpan="2">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <WrapPanel Margin="5">
+                            <TextBlock Text="Id: " />
+                            <TextBlock Text="{Binding Id}" FontWeight="Bold" />
+                            <TextBlock Text=", " />
+                            <TextBlock Text="Name: " />
+                            <TextBlock Text="{Binding Name}" FontWeight="Bold" />
+                            <TextBlock Text=", " />
+                            <TextBlock Text="Publish Date: " />
+                            <TextBlock Text="{Binding PublishDate}" FontWeight="Bold" />
+                            <TextBlock Text=", " />
+                            <TextBlock Text="Price: " />
+                            <TextBlock Text="{Binding Price}" FontWeight="Bold" />
+                            <TextBlock Text=", " />
+                            <TextBlock Text="Count: " />
+                            <TextBlock Text="{Binding Count}" FontWeight="Bold" />
+                            <TextBlock Text=", " />
+                            <TextBlock Text="Genre: " />
+                            <TextBlock Text="{Binding Genre.Name}" FontWeight="Bold" />
+                            <TextBlock Text=", " />
+                            <TextBlock Text="Group: " />
+                            <TextBlock Text="{Binding Group.Name}" FontWeight="Bold" />
+                            <TextBlock Text=", " />
+                            <TextBlock Text="Publisher: " />
+                            <TextBlock Text="{Binding Publisher.Name}" FontWeight="Bold" />
+                        </WrapPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </DockPanel>
+        
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical">
+            <Button Command="{Binding Order}" Margin="5" Padding="5" FontSize="18">Order</Button>
+            <StackPanel Orientation="Horizontal">
+                <Label FontSize="18">Total price:</Label>
+                <Label FontSize="18" Content="{Binding Price}"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
